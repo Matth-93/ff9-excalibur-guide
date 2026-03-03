@@ -2,6 +2,8 @@
 An interactive HTML reimagining of Atomos199's legendary Final Fantasy IX walkthrough — the definitive guide for obtaining the Excalibur II while completing a perfect game.
 Built with love for the FFIX community. Original guide by Atomos199, reproduced with his kind permission.
 
+Final Fantasy IX was my very first video game. It holds a special place in my heart, and this project is my small way of giving back to a guide and a community that made the experience unforgettable.
+
 "I gladly bestow my blessings" — Atomos199
 
 ✨ Features
