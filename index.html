@@ -17,13 +17,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
-            --bg-main: #09080f; --bg-secondary: #100f1d; --bg-tertiary: #0c0b16;
-            --border-color: #201e38; --text-main: #ece4cc; --text-secondary: #8ba0be;
-            --accent-primary: #c8a84b; --accent-secondary: #8a6c20; --accent-danger: #e04545;
-            --accent-danger-light: #f09080; --accent-warn: #e8c440; --accent-info: #40b8d8;
-            --accent-green: #30c090; --accent-green-dim: #1a7858;
-            --glow-primary: rgba(200, 168, 75, 0.14); --glow-danger: rgba(224, 69, 69, 0.1);
-            --glow-warn: rgba(232, 196, 64, 0.1); --glow-green: rgba(48, 192, 144, 0.1);
+            --bg-main: #080d1a; --bg-secondary: #0d1428; --bg-tertiary: #0a1020;
+            --border-color: #1c2840; --text-main: #e8dfc4; --text-secondary: #7a96b2;
+            --accent-primary: #c8a84b; --accent-secondary: #8a6c20; --accent-danger: #b84040;
+            --accent-danger-light: #d88070; --accent-warn: #c49a32; --accent-info: #3888a8;
+            --accent-green: #3a8a68; --accent-green-dim: #24614a;
+            --glow-primary: rgba(200, 168, 75, 0.14); --glow-danger: rgba(184, 64, 64, 0.1);
+            --glow-warn: rgba(196, 154, 50, 0.1); --glow-green: rgba(58, 138, 104, 0.1);
         }
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -49,7 +49,7 @@
         .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary)); z-index: 100; transition: width 0.1s; }
 
         /* --- TABS --- */
-        .tabs { display: flex; border-bottom: 2px solid var(--accent-secondary); position: sticky; top: 0; background-color: rgba(9,8,15,0.97); backdrop-filter: blur(16px); z-index: 50; flex-wrap: wrap; gap: 0; padding: 0 0.5rem; }
+        .tabs { display: flex; border-bottom: 2px solid var(--accent-secondary); position: sticky; top: 0; background-color: rgba(8,13,26,0.97); backdrop-filter: blur(16px); z-index: 50; flex-wrap: wrap; gap: 0; padding: 0 0.5rem; }
         .tab-button { background-color: transparent; border: none; padding: 0.875rem 1.25rem; color: var(--text-secondary); cursor: pointer; font-size: 1rem; font-weight: 400; font-family: 'Macondo', Georgia, serif; letter-spacing: 0.04em; position: relative; transition: color 0.2s; }
         .tab-button:hover { color: var(--text-main); }
         .tab-button.active { color: var(--accent-primary); }
@@ -112,15 +112,15 @@
             background: var(--bg-tertiary);
         }
         .shop-table th {
-            background: rgba(42,53,80,0.8);
-            color: #cbd5e1; font-weight: 600; font-size: 0.8rem;
+            background: rgba(28,40,64,0.9);
+            color: #c8c0a8; font-weight: 600; font-size: 0.8rem;
             text-transform: uppercase; letter-spacing: 0.05em;
             padding: 0.6rem 0.875rem; border-bottom: 1px solid var(--border-color);
             text-align: left;
         }
         .shop-table td {
-            padding: 0.5rem 0.875rem; border-bottom: 1px solid rgba(42,53,80,0.5);
-            color: #d1d5db; font-size: 0.85rem;
+            padding: 0.5rem 0.875rem; border-bottom: 1px solid rgba(28,40,64,0.6);
+            color: #c8c0a8; font-size: 0.85rem;
         }
         .shop-table tr:hover td { background-color: rgba(200,168,75,0.06); }
         .shop-table tr:last-child td { border-bottom: none; }
