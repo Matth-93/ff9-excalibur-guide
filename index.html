@@ -17,8 +17,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         :root {
-            --bg-main: #070c1f; --bg-secondary: #0d1535; --bg-tertiary: #091028;
-            --border-color: #1e2d58; --text-main: #ece4cc; --text-secondary: #8ba0be;
+            --bg-main: #09080f; --bg-secondary: #100f1d; --bg-tertiary: #0c0b16;
+            --border-color: #201e38; --text-main: #ece4cc; --text-secondary: #8ba0be;
             --accent-primary: #c8a84b; --accent-secondary: #8a6c20; --accent-danger: #e04545;
             --accent-danger-light: #f09080; --accent-warn: #e8c440; --accent-info: #40b8d8;
             --accent-green: #30c090; --accent-green-dim: #1a7858;
@@ -27,7 +27,7 @@
         }
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', system-ui, sans-serif; background-color: var(--bg-main); background-image: radial-gradient(rgba(200, 168, 75, 0.04) 1px, transparent 1px); background-size: 40px 40px; color: var(--text-main); line-height: 1.7; }
+        body { font-family: 'Inter', system-ui, sans-serif; background-color: var(--bg-main); color: var(--text-main); line-height: 1.7; }
         ::selection { background: var(--accent-secondary); color: white; }
         ::-webkit-scrollbar { width: 8px; height: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg-main); }
@@ -49,7 +49,7 @@
         .progress-bar { position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary)); z-index: 100; transition: width 0.1s; }
 
         /* --- TABS --- */
-        .tabs { display: flex; border-bottom: 2px solid var(--accent-secondary); position: sticky; top: 0; background-color: rgba(7,12,31,0.97); backdrop-filter: blur(16px); z-index: 50; flex-wrap: wrap; gap: 0; padding: 0 0.5rem; }
+        .tabs { display: flex; border-bottom: 2px solid var(--accent-secondary); position: sticky; top: 0; background-color: rgba(9,8,15,0.97); backdrop-filter: blur(16px); z-index: 50; flex-wrap: wrap; gap: 0; padding: 0 0.5rem; }
         .tab-button { background-color: transparent; border: none; padding: 0.875rem 1.25rem; color: var(--text-secondary); cursor: pointer; font-size: 1rem; font-weight: 400; font-family: 'Macondo', Georgia, serif; letter-spacing: 0.04em; position: relative; transition: color 0.2s; }
         .tab-button:hover { color: var(--text-main); }
         .tab-button.active { color: var(--accent-primary); }
@@ -85,25 +85,25 @@
         .instruction-list > li { list-style: disc; margin-bottom: 0.6rem; line-height: 1.55; }
 
         /* --- BATTLE BOX --- */
-        .battle-box { background: linear-gradient(135deg, rgba(239,68,68,0.04) 0%, var(--bg-tertiary) 100%); padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0.5rem; border-left: 3px solid var(--accent-danger); }
-        .battle-title { font-weight: 700; color: var(--accent-danger-light); font-size: 1.05rem; display: flex; align-items: center; gap: 0.5rem; }
+        .battle-box { background: linear-gradient(135deg, rgba(224,69,69,0.10) 0%, var(--bg-tertiary) 100%); padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0.5rem; border-left: 4px solid var(--accent-danger); }
+        .battle-title { font-family: 'Macondo', Georgia, serif; font-weight: 400; color: var(--accent-danger-light); font-size: 1.15rem; letter-spacing: 0.04em; display: flex; align-items: center; gap: 0.5rem; }
         .battle-title::before { content: '⚔'; font-size: 0.9rem; }
 
         /* --- DETOUR / INFO BOX --- */
-        .detour-box { background: linear-gradient(135deg, rgba(251,191,36,0.04) 0%, var(--bg-tertiary) 100%); padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0.5rem; border-left: 3px solid var(--accent-warn); }
-        .detour-title { font-weight: 700; color: var(--accent-warn); font-size: 1.05rem; display: flex; align-items: center; gap: 0.5rem; }
+        .detour-box { background: linear-gradient(135deg, rgba(232,196,64,0.09) 0%, var(--bg-tertiary) 100%); padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0.5rem; border-left: 4px solid var(--accent-warn); }
+        .detour-title { font-family: 'Macondo', Georgia, serif; font-weight: 400; color: var(--accent-warn); font-size: 1.15rem; letter-spacing: 0.04em; display: flex; align-items: center; gap: 0.5rem; }
         .detour-title::before { content: '💡'; font-size: 0.85rem; }
 
         /* --- PATH BOX --- */
-        .path-box { background: linear-gradient(135deg, rgba(52,211,153,0.04) 0%, var(--bg-tertiary) 100%); padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0.5rem; border-left: 3px solid var(--accent-green); }
+        .path-box { background: linear-gradient(135deg, rgba(48,192,144,0.09) 0%, var(--bg-tertiary) 100%); padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0.5rem; border-left: 4px solid var(--accent-green); }
 
         /* --- CONFIG BOX --- */
-        .config-box { background: linear-gradient(135deg, rgba(96,165,250,0.04) 0%, var(--bg-tertiary) 100%); padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0.5rem; border-left: 3px solid var(--accent-info); }
-        .config-title { font-weight: 700; color: var(--accent-info); font-size: 1.05rem; }
+        .config-box { background: linear-gradient(135deg, rgba(64,184,216,0.09) 0%, var(--bg-tertiary) 100%); padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0.5rem; border-left: 4px solid var(--accent-info); }
+        .config-title { font-family: 'Macondo', Georgia, serif; font-weight: 400; color: var(--accent-info); font-size: 1.15rem; letter-spacing: 0.04em; }
 
         /* --- SHOP BOX --- */
-        .shop-box { background: linear-gradient(135deg, rgba(52,211,153,0.04) 0%, var(--bg-tertiary) 100%); padding: 1rem 1.25rem; margin: 0.75rem 0; border-radius: 0.5rem; border-left: 3px solid var(--accent-green); }
-        .shop-title { font-weight: 700; color: var(--accent-green); font-size: 1.05rem; }
+        .shop-box { background: linear-gradient(135deg, rgba(48,192,144,0.09) 0%, var(--bg-tertiary) 100%); padding: 1rem 1.25rem; margin: 0.75rem 0; border-radius: 0.5rem; border-left: 4px solid var(--accent-green); }
+        .shop-title { font-family: 'Macondo', Georgia, serif; font-weight: 400; color: var(--accent-green); font-size: 1.15rem; letter-spacing: 0.04em; }
 
         /* --- TABLES --- */
         .shop-table {
