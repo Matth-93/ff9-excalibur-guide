@@ -3036,7 +3036,12 @@ document.addEventListener('DOMContentLoaded', function () {
     function switchTab(tabId) {
         tabButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tabId));
         tabContents.forEach(content => content.classList.toggle('active', content.id === tabId));
+        try { localStorage.setItem('ffix_active_tab', tabId); } catch(e) {}
     }
+
+    // Restore last active tab on load
+    const savedTab = (() => { try { return localStorage.getItem('ffix_active_tab'); } catch(e) { return null; } })();
+    if (savedTab && document.getElementById(savedTab)) switchTab(savedTab);
 
     tabButtons.forEach(button => {
         button.addEventListener('click', () => switchTab(button.dataset.tab));
