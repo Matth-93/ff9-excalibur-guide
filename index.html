@@ -98,6 +98,24 @@
         .path-box { background: linear-gradient(135deg, rgba(40,140,100,0.06) 0%, var(--bg-tertiary) 100%); padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0.5rem; border-left: 3px solid var(--accent-green); }
         .path-label { display: inline-block; margin: 1.25rem 0 0.5rem; padding: 0.2rem 0.75rem; border-radius: 0.3rem; background: rgba(58,138,104,0.15); border: 1px solid var(--accent-green); color: var(--accent-green); font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
 
+        /* --- PERFECT STATS CARDS --- */
+        .stat-path-card { border: 1px solid rgba(255,255,255,0.09); border-radius: 0.45rem; margin: 0.85rem 0 1.4rem; overflow: hidden; }
+        .stat-path-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.4rem; padding: 0.55rem 0.9rem; background: rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.07); }
+        .stat-path-name { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: var(--accent-green); }
+        .stat-badges { display: flex; gap: 0.35rem; flex-wrap: wrap; }
+        .stat-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 700; padding: 0.1rem 0.42rem; border-radius: 0.2rem; }
+        .stat-badge.spr { background: rgba(58,138,104,0.18); color: #6fcca0; border: 1px solid rgba(58,138,104,0.4); }
+        .stat-badge.str { background: rgba(200,75,75,0.15); color: #e88a8a; border: 1px solid rgba(200,75,75,0.35); }
+        .stat-badge.mag { background: rgba(130,88,200,0.15); color: #b89ae8; border: 1px solid rgba(130,88,200,0.35); }
+        .stat-badge.spd { background: rgba(196,154,50,0.15); color: #e8cc7a; border: 1px solid rgba(196,154,50,0.35); }
+        .stat-equip-table { width: 100%; border-collapse: collapse; }
+        .stat-equip-table thead th { padding: 0.3rem 0.75rem; font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: #4a5568; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .stat-equip-table tbody td { padding: 0.28rem 0.75rem; font-size: 0.8rem; color: #9aa5b4; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .stat-equip-table tbody tr:last-child td { border-bottom: none; }
+        .stat-equip-table tbody tr:hover td { background: rgba(255,255,255,0.02); }
+        .stat-equip-table td.lvl-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; color: var(--accent-green); white-space: nowrap; min-width: 2.5rem; }
+        .char-section-header { font-family: 'Macondo', Georgia, serif; font-size: 1.3rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-green); margin: 2.2rem 0 0.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(58,138,104,0.3); }
+
         /* --- CONFIG BOX --- */
         .config-box { background: linear-gradient(135deg, rgba(50,140,170,0.06) 0%, var(--bg-tertiary) 100%); padding: 1rem 1.25rem; margin: 1.25rem 0; border-radius: 0.5rem; border-left: 3px solid var(--accent-info); }
         .config-title { font-family: 'Macondo', Georgia, serif; font-weight: 400; color: var(--accent-info); font-size: 1.15rem; letter-spacing: 0.04em; }
@@ -2123,57 +2141,39 @@
 <ul class="list-disc list-inside my-2 space-y-1">
 <li class="text-sm">For an additional challenge, try to finish your perfect save within 100 hours, before the clock turns red. It&#x27;s possible to complete everything except maxing the amount of Chocobo Hot&amp;Cold games, and maxing all card stats (but Rank and Collector&#x27;s Lv CAN be maxed within 100 hours).</li>
 </ul></div></div><div class="segment-box" id="section-H00"><button class="foldable-header collapsed"><div class="segment-title-container"><span class="segment-title">PERFECT STATS <span class="segment-code">(H00)</span></span></div><svg class="arrow-icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg></button><div class="foldable-content collapsed"><p class="mb-3">This section lists all the level up strategies for every character and every stat path. Also included are strategies for the Lv 1 Path in case you ever change your mind on that. Each part has a short description of how the stats actually affect the character in question. The actual equipment to be used will be listed below that, in the following format:</p>
-<h3 class="subsection-header">PATH ?</h3>
-<p class="mb-3">| ?? | Weapon      : Head Gear   : Arm Gear    : Armor       : Add-On      |</p>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH ?</span><div class="stat-badges"><span class="stat-badge spr">SPR ??</span><span class="stat-badge str">STR ??</span><span class="stat-badge mag">MAG ??</span><span class="stat-badge spd">SPD ??</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">??</td><td>Weapon</td><td>Head Gear</td><td>Arm Gear</td><td>Armor</td><td>Add-On</td></tr></tbody></table></div>
 <p class="mb-3">The numbers next to each set of equipment represent how many LEVEL UPS the set is to be equipped for. So, if the number is 9, for example, then have that set of equipment on for 9 Level Ups. This can be from Lv 10 to 19, 67 to 76 or any other Lvs, as long as you keep it on for a total of 9 and ONLY 9 Level Ups. You don&#x27;t need to and sometimes can&#x27;t equip these equipment sets in order, but as long as each of them is equipped for the listed number of Level Ups, it makes no difference. *T designates a set-up for Tantarian, *P a set-up for Pandemonium, *H stands for Hecteyes, and finally *X for Quina&#x27;s training during the Combined stats path.</p>
 <p class="mb-3">Please keep in mind that these will be your characters&#x27; NATURAL stats at Lv 99, without any gear equipped. Once you are done with your perfect save, you will have to unequip all the gear from your characters in order to completely fill your item list, leaving only their basic weapon, which everyone should have 2 copies of at the end. Then you will see the stats listed, otherwise you will usually have higher values thanks to equipment.</p>
 <p class="mb-3">Due to the way your stats are calculated, Spirit will only reach 50 at around Lv 99 when using these strategies. You&#x27;ll notice that for many of the set-ups listed you are told to remove Spirit-raising equipment before you even reach 50 Spirit. This is correct, so just follow the steps and everything should work out at Lv 99, or slightly earlier.</p>
 <p class="mb-3">Finally, the set-ups illustrated in this section are now GUARANTEED to be the most optimal possible, thanks to them being generated or confirmed by an optimization program written by letao! If, however, you somehow come up with something better, don&#x27;t hesitate to submit your discovery!</p>
-<h3 class="subsection-header">ZIDANE</h3>
+<h3 class="char-section-header">ZIDANE</h3>
 <p class="mb-3">Zidane is obviously a physical attacker, so all of his set-ups will focus on Strength. Speed and Magic are equally useless, but Magic is given priority because at least in theory, it is useful for paying for his Skills. You can also obtain more stat points in total by focusing on Magic than on Speed, and Zidane will still be by far the fastest character in the game.</p>
-<h3 class="subsection-header">PATH A</h3>
-<p class="mb-3">| *T |      -      : Ritual Hat  : Bone Wrist  : Survival V. : Black Belt  | | *P | Orichalcon  : Green Beret : N-Kai Armlet: Power Vest  : Black Belt  | | 03 | Masamune    : Green Beret : Power Wrist : Dark Gear   : Dark Matter | | 24 | Masamune    : Green Beret : Power Wrist : Dark Gear   : Black Belt  | | 47 | Masamune    : Green Beret : Power Wrist : Power Vest  : Black Belt  |</p>
-<h3 class="subsection-header">PATH B</h3>
-<p class="mb-3">| *P | Orichalcon  : Green Beret : N-Kai Armlet: Power Vest  : Black Belt  | | 04 | Masamune    : Green Beret : Power Wrist : Judo Uniform: Dark Matter | | 09 | Masamune    : Green Beret : Power Wrist : Power Vest  : Black Belt  | | 10 | Orichalcon  : Green Beret : Power Wrist : Dark Gear   : Black Belt  | | 54 | Masamune    : Green Beret : Power Wrist : Dark Gear   : Dark Matter |</p>
-<h3 class="subsection-header">PATH C</h3>
-<p class="mb-3">| 42 | Masamune    : Green Beret : Power Wrist : Dark Gear   : Black Belt  | | 56 | Masamune    : Green Beret : Power Wrist : Power Vest  : Black Belt  |</p>
-<h3 class="subsection-header">PATH COMBINED</h3>
-<p class="mb-3">| 06 | Masamune    : Green Beret : N-Kai Armlet: Dark Gear   : Black Belt  | | 92 | Masamune    : Green Beret : Power Wrist : Dark Gear   : Dark Matter |</p>
-<h3 class="subsection-header">LV 1 - ORDERED</h3>
-<p class="mb-3">| *T |      -      : Ritual Hat  : Bone Wrist  : Survival V. : Black Belt  | | *P | Orichalcon  : Green Beret : N-Kai Armlet: Power Vest  : Dark Matter | | 01 | Masamune    : Thief Hat   : N-Kai Armlet: Dark Gear   : Ribbon      | | 02 | Masamune    : Green Beret : N-Kai Armlet: Dark Gear   : Black Belt  | | 05 | Masamune    : Green Beret : Power Wrist : Dark Gear   : Black Belt  | | 59 | Masamune    : Green Beret : Power Wrist : Dark Gear   : Dark Matter |</p>
-<h3 class="subsection-header">LV 1 - COMBINED</h3>
-<p class="mb-3">| *T |      -      : Bandana     : Bone Wrist  : Survival V. : Dark Matter | | *P | Orichalcon  : Green Beret : N-Kai Armlet: Power Vest  : Dark Matter | | 05 | Masamune    : Green Beret : Power Wrist : Power Vest  : Ribbon      | | 14 | Masamune    : Green Beret : Power Wrist : Dark Gear   : Dark Matter | | 48 | Masamune    : Mantra Band : Power Wrist : Dark Gear   : Dark Matter |</p>
-<h3 class="subsection-header">GARNET</h3>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH A</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 77</span><span class="stat-badge mag">MAG 61</span><span class="stat-badge spd">SPD 34</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">*T</td><td>—</td><td>Ritual Hat</td><td>Bone Wrist</td><td>Survival V.</td><td>Black Belt</td></tr><tr><td class="lvl-badge">*P</td><td>Orichalcon</td><td>Green Beret</td><td>N-Kai Armlet</td><td>Power Vest</td><td>Black Belt</td></tr><tr><td class="lvl-badge">03</td><td>Masamune</td><td>Green Beret</td><td>Power Wrist</td><td>Dark Gear</td><td>Dark Matter</td></tr><tr><td class="lvl-badge">24</td><td>Masamune</td><td>Green Beret</td><td>Power Wrist</td><td>Dark Gear</td><td>Black Belt</td></tr><tr><td class="lvl-badge">47</td><td>Masamune</td><td>Green Beret</td><td>Power Wrist</td><td>Power Vest</td><td>Black Belt</td></tr></tbody></table></div>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH B</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 77</span><span class="stat-badge mag">MAG 64</span><span class="stat-badge spd">SPD 36</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">*P</td><td>Orichalcon</td><td>Green Beret</td><td>N-Kai Armlet</td><td>Power Vest</td><td>Black Belt</td></tr><tr><td class="lvl-badge">04</td><td>Masamune</td><td>Green Beret</td><td>Power Wrist</td><td>Judo Uniform</td><td>Dark Matter</td></tr><tr><td class="lvl-badge">09</td><td>Masamune</td><td>Green Beret</td><td>Power Wrist</td><td>Power Vest</td><td>Black Belt</td></tr><tr><td class="lvl-badge">10</td><td>Orichalcon</td><td>Green Beret</td><td>Power Wrist</td><td>Dark Gear</td><td>Black Belt</td></tr><tr><td class="lvl-badge">54</td><td>Masamune</td><td>Green Beret</td><td>Power Wrist</td><td>Dark Gear</td><td>Dark Matter</td></tr></tbody></table></div>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH C</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 78</span><span class="stat-badge mag">MAG 62</span><span class="stat-badge spd">SPD 35</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">42</td><td>Masamune</td><td>Green Beret</td><td>Power Wrist</td><td>Dark Gear</td><td>Black Belt</td></tr><tr><td class="lvl-badge">56</td><td>Masamune</td><td>Green Beret</td><td>Power Wrist</td><td>Power Vest</td><td>Black Belt</td></tr></tbody></table></div>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH COMBINED</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 77</span><span class="stat-badge mag">MAG 68</span><span class="stat-badge spd">SPD 35</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">06</td><td>Masamune</td><td>Green Beret</td><td>N-Kai Armlet</td><td>Dark Gear</td><td>Black Belt</td></tr><tr><td class="lvl-badge">92</td><td>Masamune</td><td>Green Beret</td><td>Power Wrist</td><td>Dark Gear</td><td>Dark Matter</td></tr></tbody></table></div>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">LV 1 - ORDERED</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 76</span><span class="stat-badge mag">MAG 65</span><span class="stat-badge spd">SPD 35</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">*T</td><td>—</td><td>Ritual Hat</td><td>Bone Wrist</td><td>Survival V.</td><td>Black Belt</td></tr><tr><td class="lvl-badge">*P</td><td>Orichalcon</td><td>Green Beret</td><td>N-Kai Armlet</td><td>Power Vest</td><td>Dark Matter</td></tr><tr><td class="lvl-badge">01</td><td>Masamune</td><td>Thief Hat</td><td>N-Kai Armlet</td><td>Dark Gear</td><td>Ribbon</td></tr><tr><td class="lvl-badge">02</td><td>Masamune</td><td>Green Beret</td><td>N-Kai Armlet</td><td>Dark Gear</td><td>Black Belt</td></tr><tr><td class="lvl-badge">05</td><td>Masamune</td><td>Green Beret</td><td>Power Wrist</td><td>Dark Gear</td><td>Black Belt</td></tr><tr><td class="lvl-badge">59</td><td>Masamune</td><td>Green Beret</td><td>Power Wrist</td><td>Dark Gear</td><td>Dark Matter</td></tr></tbody></table></div>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">LV 1 - COMBINED</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 75</span><span class="stat-badge mag">MAG 68</span><span class="stat-badge spd">SPD 34</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">*T</td><td>—</td><td>Bandana</td><td>Bone Wrist</td><td>Survival V.</td><td>Dark Matter</td></tr><tr><td class="lvl-badge">*P</td><td>Orichalcon</td><td>Green Beret</td><td>N-Kai Armlet</td><td>Power Vest</td><td>Dark Matter</td></tr><tr><td class="lvl-badge">05</td><td>Masamune</td><td>Green Beret</td><td>Power Wrist</td><td>Power Vest</td><td>Ribbon</td></tr><tr><td class="lvl-badge">14</td><td>Masamune</td><td>Green Beret</td><td>Power Wrist</td><td>Dark Gear</td><td>Dark Matter</td></tr><tr><td class="lvl-badge">48</td><td>Masamune</td><td>Mantra Band</td><td>Power Wrist</td><td>Dark Gear</td><td>Dark Matter</td></tr></tbody></table></div>
+<h3 class="char-section-header">GARNET</h3>
 <p class="mb-3">Garnet&#x27;s focus is clearly on Magic, especially with her wide selection of damaging summons. However, it should be noted that she does become a pretty good physical attacker as well, especially when given a racket and something which boosts Wind Elem-Atk. That maximizes her physical power and lets her attack from the back row.</p>
-<h3 class="subsection-header">PATH A &amp; B</h3>
-<p class="mb-3">| *P | Magic Racket: Lamia&#x27;s T.  : Magic Armlet: Minerva&#x27;s P.: Ribbon      | | 03 | Stardust R. : Holy Miter  : Magic Armlet: Power Vest  : Pearl Rouge | | 74 | Magic Racket: Holy Miter  : Magic Armlet: Minerva&#x27;s P.: Pearl Rouge |</p>
-<h3 class="subsection-header">PATH C</h3>
-<p class="mb-3">| *H | Magic Racket: Lamia&#x27;s T.  : Magic Armlet: Minerva&#x27;s P.: Ribbon      | | *P | Magic Racket: Lamia&#x27;s T.  : Magic Armlet: Minerva&#x27;s P.: Ribbon      | | 01 | Magic Racket: Holy Miter  : Power Wrist : Dark Gear   : Pearl Rouge | | 11 | Magic Racket: Holy Miter  : Magic Armlet: R. of Lords : Pearl Rouge | | 63 | Magic Racket: Holy Miter  : Magic Armlet: Minerva&#x27;s P.: Pearl Rouge |</p>
-<h3 class="subsection-header">PATH COMBINED</h3>
-<p class="mb-3">| *H | Magic Racket: Holy Miter  : Magic Armlet: R. of Lords : Pearl Rouge | | *P | Magic Racket: Holy Miter  : Magic Armlet: R. of Lords : Pearl Rouge | | 01 | Magic Racket: Holy Miter  : Power Wrist : Minerva&#x27;s P.: Ribbon      | | 01 | Magic Racket: Holy Miter  : Magic Armlet: Minerva&#x27;s P.: Ribbon      | | 08 | Magic Racket: Holy Miter  : Magic Armlet: R. of Lords : Ribbon      | | 27 | Magic Racket: Holy Miter  : Magic Armlet: R. of Lords : Pearl Rouge | | 36 | Magic Racket: Holy Miter  : Magic Armlet: R. of Lords : Dark Matter |</p>
-<h3 class="subsection-header">PATH LV 1</h3>
-<p class="mb-3">| 03 | Stardust R. : Holy Miter  : Magic Armlet: Power Vest  : Pearl Rouge | | 21 | Magic Racket: Lamia&#x27;s T.  : Magic Armlet: Minerva&#x27;s P.: Ribbon      | | 74 | Magic Racket: Holy Miter  : Magic Armlet: Minerva&#x27;s P.: Pearl Rouge |</p>
-<h3 class="subsection-header">VIVI</h3>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH A &amp; B</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 56</span><span class="stat-badge mag">MAG 89</span><span class="stat-badge spd">SPD 30</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">*P</td><td>Magic Racket</td><td>Lamia&#x27;s T.</td><td>Magic Armlet</td><td>Minerva&#x27;s P.</td><td>Ribbon</td></tr><tr><td class="lvl-badge">03</td><td>Stardust R.</td><td>Holy Miter</td><td>Magic Armlet</td><td>Power Vest</td><td>Pearl Rouge</td></tr><tr><td class="lvl-badge">74</td><td>Magic Racket</td><td>Holy Miter</td><td>Magic Armlet</td><td>Minerva&#x27;s P.</td><td>Pearl Rouge</td></tr></tbody></table></div>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH C</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 56</span><span class="stat-badge mag">MAG 89</span><span class="stat-badge spd">SPD 30</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">*H</td><td>Magic Racket</td><td>Lamia&#x27;s T.</td><td>Magic Armlet</td><td>Minerva&#x27;s P.</td><td>Ribbon</td></tr><tr><td class="lvl-badge">*P</td><td>Magic Racket</td><td>Lamia&#x27;s T.</td><td>Magic Armlet</td><td>Minerva&#x27;s P.</td><td>Ribbon</td></tr><tr><td class="lvl-badge">01</td><td>Magic Racket</td><td>Holy Miter</td><td>Power Wrist</td><td>Dark Gear</td><td>Pearl Rouge</td></tr><tr><td class="lvl-badge">11</td><td>Magic Racket</td><td>Holy Miter</td><td>Magic Armlet</td><td>R. of Lords</td><td>Pearl Rouge</td></tr><tr><td class="lvl-badge">63</td><td>Magic Racket</td><td>Holy Miter</td><td>Magic Armlet</td><td>Minerva&#x27;s P.</td><td>Pearl Rouge</td></tr></tbody></table></div>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH COMBINED</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 59</span><span class="stat-badge mag">MAG 86</span><span class="stat-badge spd">SPD 33</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">*H</td><td>Magic Racket</td><td>Holy Miter</td><td>Magic Armlet</td><td>R. of Lords</td><td>Pearl Rouge</td></tr><tr><td class="lvl-badge">*P</td><td>Magic Racket</td><td>Holy Miter</td><td>Magic Armlet</td><td>R. of Lords</td><td>Pearl Rouge</td></tr><tr><td class="lvl-badge">01</td><td>Magic Racket</td><td>Holy Miter</td><td>Power Wrist</td><td>Minerva&#x27;s P.</td><td>Ribbon</td></tr><tr><td class="lvl-badge">01</td><td>Magic Racket</td><td>Holy Miter</td><td>Magic Armlet</td><td>Minerva&#x27;s P.</td><td>Ribbon</td></tr><tr><td class="lvl-badge">08</td><td>Magic Racket</td><td>Holy Miter</td><td>Magic Armlet</td><td>R. of Lords</td><td>Ribbon</td></tr><tr><td class="lvl-badge">27</td><td>Magic Racket</td><td>Holy Miter</td><td>Magic Armlet</td><td>R. of Lords</td><td>Pearl Rouge</td></tr><tr><td class="lvl-badge">36</td><td>Magic Racket</td><td>Holy Miter</td><td>Magic Armlet</td><td>R. of Lords</td><td>Dark Matter</td></tr></tbody></table></div>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH LV 1</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 56</span><span class="stat-badge mag">MAG 89</span><span class="stat-badge spd">SPD 30</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">03</td><td>Stardust R.</td><td>Holy Miter</td><td>Magic Armlet</td><td>Power Vest</td><td>Pearl Rouge</td></tr><tr><td class="lvl-badge">21</td><td>Magic Racket</td><td>Lamia&#x27;s T.</td><td>Magic Armlet</td><td>Minerva&#x27;s P.</td><td>Ribbon</td></tr><tr><td class="lvl-badge">74</td><td>Magic Racket</td><td>Holy Miter</td><td>Magic Armlet</td><td>Minerva&#x27;s P.</td><td>Pearl Rouge</td></tr></tbody></table></div>
+<h3 class="char-section-header">VIVI</h3>
 <p class="mb-3">Vivi is a simple character stat-wise. Obviously, his set-up will focus on Magic. Like Garnet, Vivi ends up with a little over 50 Strength, but his staves are neither long-range, nor can their power be boosted by element- raising equipment. They do have Add Status properties, though - but Strength doesn&#x27;t come in handy for that.</p>
-<h3 class="subsection-header">PATH A/B/C/LV1</h3>
-<p class="mb-3">| 24 |      -      : Holy Miter  : Magic Armlet: Magician&#x27;s R: Ribbon      | | 35 |      -      : Holy Miter  : Magic Armlet: R. of Lords : Ribbon      | | 39 |      -      : Holy Miter  : Magic Armlet: Dark Gear   : Ribbon      |</p>
-<h3 class="subsection-header">PATH COMBINED</h3>
-<p class="mb-3">| 02 |      -      : Holy Miter  : N-Kai Armlet: Dark Gear   : Rebirth Ring| | 06 |      -      : Holy Miter  : N-Kai Armlet: R. of Lords : Rebirth Ring| | 05 |      -      : Holy Miter  : N-Kai Armlet: R. of Lords : Ribbon      | | 85 |      -      : Holy Miter  : Magic Armlet: R. of Lords : Ribbon      |</p>
-<h3 class="subsection-header">STEINER</h3>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH A/B/C/LV1</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 54</span><span class="stat-badge mag">MAG 83</span><span class="stat-badge spd">SPD 26</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">24</td><td>—</td><td>Holy Miter</td><td>Magic Armlet</td><td>Magician&#x27;s R</td><td>Ribbon</td></tr><tr><td class="lvl-badge">35</td><td>—</td><td>Holy Miter</td><td>Magic Armlet</td><td>R. of Lords</td><td>Ribbon</td></tr><tr><td class="lvl-badge">39</td><td>—</td><td>Holy Miter</td><td>Magic Armlet</td><td>Dark Gear</td><td>Ribbon</td></tr></tbody></table></div>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH COMBINED</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 56</span><span class="stat-badge mag">MAG 82</span><span class="stat-badge spd">SPD 28</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">02</td><td>—</td><td>Holy Miter</td><td>N-Kai Armlet</td><td>Dark Gear</td><td>Rebirth Ring</td></tr><tr><td class="lvl-badge">06</td><td>—</td><td>Holy Miter</td><td>N-Kai Armlet</td><td>R. of Lords</td><td>Rebirth Ring</td></tr><tr><td class="lvl-badge">05</td><td>—</td><td>Holy Miter</td><td>N-Kai Armlet</td><td>R. of Lords</td><td>Ribbon</td></tr><tr><td class="lvl-badge">85</td><td>—</td><td>Holy Miter</td><td>Magic Armlet</td><td>R. of Lords</td><td>Ribbon</td></tr></tbody></table></div>
+<h3 class="char-section-header">STEINER</h3>
 <p class="mb-3">This strategy focuses mainly on maxing Steiner&#x27;s Strength. Although you might think that Steiner&#x27;s Magic stat is also important due to his Sword Magic abilities, this is not the case. Sword Magic is not a magical attack, it is only a boosted, elemental physical attack. The only thing Steiner&#x27;s Magic stat is good for is providing MP, which is a bit disappointing. But Sword Magic isn&#x27;t cheap, so I guess Magic does come in handy.</p>
-<h3 class="subsection-header">ALL PATHS</h3>
-<p class="mb-3">| 17 | Defender    : Kaiser Helm : Venetia Sh. : Genji Armor : Dark Matter | | 31 | Defender    : Kaiser Helm : Venetia Sh. : Maximillian : Dark Matter | | 50 | Defender    : Kaiser Helm : Venetia Sh. : Diamond A.  : Dark Matter |</p>
-<h3 class="subsection-header">FREYA</h3>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">ALL PATHS</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 79</span><span class="stat-badge mag">MAG 65</span><span class="stat-badge spd">SPD 27</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">17</td><td>Defender</td><td>Kaiser Helm</td><td>Venetia Sh.</td><td>Genji Armor</td><td>Dark Matter</td></tr><tr><td class="lvl-badge">31</td><td>Defender</td><td>Kaiser Helm</td><td>Venetia Sh.</td><td>Maximillian</td><td>Dark Matter</td></tr><tr><td class="lvl-badge">50</td><td>Defender</td><td>Kaiser Helm</td><td>Venetia Sh.</td><td>Diamond A.</td><td>Dark Matter</td></tr></tbody></table></div>
+<h3 class="char-section-header">FREYA</h3>
 <p class="mb-3">Freya is similar to Steiner in most respects. She is a physical attacker; none of her Dragon skills make use of the Magic stat. Lancer is physical, Dragon Breath depends on the enemy&#x27;s max and current HP, Cherry Blossom is magical but uses Strength to determine damage, and Dragon&#x27;s Crest has fixed damage. However, those skills and her others do cost a lot of MP, therefore her set-up will focus on Strength, while still getting as many Magic points as possible along the way.</p>
-<h3 class="subsection-header">PATH A</h3>
-<p class="mb-3">| *P |      -      : Barbut      : Venetia Sh. : Minerva&#x27;s P.: Barette     | | 12 |      -      : Barbut      : Venetia Sh. : Minerva&#x27;s P.: Pearl Rouge | | 22 |      -      : Kaiser Helm : Venetia Sh. : Minerva&#x27;s P.: Pearl Rouge | | 43 |      -      : Barbut      : Venetia Sh. : Minerva&#x27;s P.: Barette     |</p>
-<h3 class="subsection-header">PATH B &amp; C</h3>
-<p class="mb-3">| *T |      -      : Barbut      : Mythril Gl. : Plate Mail  : Barette     | | *P |      -      : Mythril Helm: Venetia Sh. : Minerva&#x27;s P.: Barette     | | 04 |      -      : Barbut      : Venetia Sh. : Minerva&#x27;s P.: Pearl Rouge | | 17 |      -      : Kaiser Helm : Venetia Sh. : Minerva&#x27;s P.: Pearl Rouge | | 53 |      -      : Barbut      : Venetia Sh. : Minerva&#x27;s P.: Barette     |</p>
-<h3 class="subsection-header">PATH COMBINED</h3>
-<p class="mb-3">| *T |      -      : Lamia&#x27;s T.  : Mythril Gl. : Linen Cuir. : Pearl Rouge | | *P |      -      : Lamia&#x27;s T.  : Venetia Sh. : Minerva&#x27;s P.: Dark Matter | | 01 |      -      : Lamia&#x27;s T.  : Venetia Sh. : Minerva&#x27;s P.: Dark Matter | | 03 |      -      : Genji Helm  : Venetia Sh. : Minerva&#x27;s P.: Pearl Rouge | | 13 |      -      : Genji Helm  : Venetia Sh. : Minerva&#x27;s P.: Dark Matter | | 57 |      -      : Kaiser Helm : Venetia Sh. : Minerva&#x27;s P.: Pearl Rouge |</p>
-<h3 class="subsection-header">PATH LV 1</h3>
-<p class="mb-3">| 12 |      -      : Barbut      : Venetia Sh. : Minerva&#x27;s P.: Pearl Rouge | | 21 |      -      : Barbut      : Venetia Sh. : Minerva&#x27;s P.: Barette     | | 22 |      -      : Kaiser Helm : Venetia Sh. : Minerva&#x27;s P.: Pearl Rouge | | 43 |      -      : Barbut      : Venetia Sh. : Minerva&#x27;s P.: Barette     |</p>
-<h3 class="subsection-header">QUINA</h3>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH A</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 71</span><span class="stat-badge mag">MAG 68</span><span class="stat-badge spd">SPD 29</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">*P</td><td>—</td><td>Barbut</td><td>Venetia Sh.</td><td>Minerva&#x27;s P.</td><td>Barette</td></tr><tr><td class="lvl-badge">12</td><td>—</td><td>Barbut</td><td>Venetia Sh.</td><td>Minerva&#x27;s P.</td><td>Pearl Rouge</td></tr><tr><td class="lvl-badge">22</td><td>—</td><td>Kaiser Helm</td><td>Venetia Sh.</td><td>Minerva&#x27;s P.</td><td>Pearl Rouge</td></tr><tr><td class="lvl-badge">43</td><td>—</td><td>Barbut</td><td>Venetia Sh.</td><td>Minerva&#x27;s P.</td><td>Barette</td></tr></tbody></table></div>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH B &amp; C</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 71</span><span class="stat-badge mag">MAG 66</span><span class="stat-badge spd">SPD 29</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">*T</td><td>—</td><td>Barbut</td><td>Mythril Gl.</td><td>Plate Mail</td><td>Barette</td></tr><tr><td class="lvl-badge">*P</td><td>—</td><td>Mythril Helm</td><td>Venetia Sh.</td><td>Minerva&#x27;s P.</td><td>Barette</td></tr><tr><td class="lvl-badge">04</td><td>—</td><td>Barbut</td><td>Venetia Sh.</td><td>Minerva&#x27;s P.</td><td>Pearl Rouge</td></tr><tr><td class="lvl-badge">17</td><td>—</td><td>Kaiser Helm</td><td>Venetia Sh.</td><td>Minerva&#x27;s P.</td><td>Pearl Rouge</td></tr><tr><td class="lvl-badge">53</td><td>—</td><td>Barbut</td><td>Venetia Sh.</td><td>Minerva&#x27;s P.</td><td>Barette</td></tr></tbody></table></div>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH COMBINED</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 67</span><span class="stat-badge mag">MAG 72</span><span class="stat-badge spd">SPD 29</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">*T</td><td>—</td><td>Lamia&#x27;s T.</td><td>Mythril Gl.</td><td>Linen Cuir.</td><td>Pearl Rouge</td></tr><tr><td class="lvl-badge">*P</td><td>—</td><td>Lamia&#x27;s T.</td><td>Venetia Sh.</td><td>Minerva&#x27;s P.</td><td>Dark Matter</td></tr><tr><td class="lvl-badge">01</td><td>—</td><td>Lamia&#x27;s T.</td><td>Venetia Sh.</td><td>Minerva&#x27;s P.</td><td>Dark Matter</td></tr><tr><td class="lvl-badge">03</td><td>—</td><td>Genji Helm</td><td>Venetia Sh.</td><td>Minerva&#x27;s P.</td><td>Pearl Rouge</td></tr><tr><td class="lvl-badge">13</td><td>—</td><td>Genji Helm</td><td>Venetia Sh.</td><td>Minerva&#x27;s P.</td><td>Dark Matter</td></tr><tr><td class="lvl-badge">57</td><td>—</td><td>Kaiser Helm</td><td>Venetia Sh.</td><td>Minerva&#x27;s P.</td><td>Pearl Rouge</td></tr></tbody></table></div>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH LV 1</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 71</span><span class="stat-badge mag">MAG 68</span><span class="stat-badge spd">SPD 29</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">12</td><td>—</td><td>Barbut</td><td>Venetia Sh.</td><td>Minerva&#x27;s P.</td><td>Pearl Rouge</td></tr><tr><td class="lvl-badge">21</td><td>—</td><td>Barbut</td><td>Venetia Sh.</td><td>Minerva&#x27;s P.</td><td>Barette</td></tr><tr><td class="lvl-badge">22</td><td>—</td><td>Kaiser Helm</td><td>Venetia Sh.</td><td>Minerva&#x27;s P.</td><td>Pearl Rouge</td></tr><tr><td class="lvl-badge">43</td><td>—</td><td>Barbut</td><td>Venetia Sh.</td><td>Minerva&#x27;s P.</td><td>Barette</td></tr></tbody></table></div>
+<h3 class="char-section-header">QUINA</h3>
 <p class="mb-3">Quina is an odd character, and he/she doesn&#x27;t really use either Strength nor Magic. Quina&#x27;s physical attack damage follows a random formula and only 4 of his/her Blue Magic spells use the Magic stat for damage, 1 of which does random damage anyway (Twister), and 2 of which are hopelessly weak regardless (Goblin Punch and Lv4 Holy). So it&#x27;s really up to you what you want to focus on stat-wise. Here&#x27;s an overview:</p>
 <p class="mb-3">STRENGTH:</p>
 <ul class="instruction-list">
@@ -2194,33 +2194,23 @@
 <li>probably what was intended by the developers</li>
 <li>no need to make tough decisions</li>
 </ul>
-<h3 class="subsection-header">STR (A/B/LV1)</h3>
-<p class="mb-3">| 30 |      -      : Holy Miter  : Power Wrist : Dark Gear   : Black Belt  | | 30 |      -      : Holy Miter  : Power Wrist : Dark Gear   : Dark Matter | | 38 |      -      : Holy Miter  : Power Wrist : Dark Gear   : Rebirth Ring|</p>
-<h3 class="subsection-header">MAG (A/B/LV1)</h3>
-<p class="mb-3">| 41 |      -      : Holy Miter  : Magic Armlet: Dark Gear   : Ribbon      | | 57 |      -      : Holy Miter  : N-Kai Armlet: Dark Gear   : Ribbon      |</p>
-<h3 class="subsection-header">BAL (A/B/LV1)</h3>
-<p class="mb-3">| 04 |      -      : Holy Miter  : N-Kai Armlet: Dark Gear   : Rebirth Ring| | 94 |      -      : Holy Miter  : N-Kai Armlet: Dark Gear   : Dark Matter |</p>
-<h3 class="subsection-header">PATH C - STR</h3>
-<p class="mb-3">| *H |      -      : Holy Miter  : N-Kai Armlet: Light Robe  : Black Belt  | | *P |      -      : Holy Miter  : N-Kai Armlet: Light Robe  : Rebirth Ring| | 02 |      -      : Holy Miter  : N-Kai Armlet: Dark Gear   : Ribbon      | | 73 |      -      : Holy Miter  : Power Wrist : Dark Gear   : Black Belt  |</p>
-<h3 class="subsection-header">PATH C - BAL</h3>
-<p class="mb-3">| *H |      -      : Holy Miter  : N-Kai Armlet: R. of Lords : Black Belt  | | *P |      -      : Holy Miter  : N-Kai Armlet: R. of Lords : Rebirth Ring| | 02 |      -      : Bandana     : Power Wrist : R. of Lords : Rebirth Ring| | 05 |      -      : Holy Miter  : Power Wrist : R. of Lords : Rebirth Ring| | 05 |      -      : Holy Miter  : Power Wrist : Dark Gear   : Dark Matter | | 06 |      -      : Holy Miter  : Power Wrist : Dark Gear   : Rebirth Ring| | 57 |      -      : Holy Miter  : N-Kai Armlet: Dark Gear   : Dark Matter |</p>
-<h3 class="subsection-header">PATH COMBINED</h3>
-<p class="mb-3">| *X |      -      : Holy Miter  : N-Kai Armlet: R. of Lords : Ribbon      | | 02 |      -      : Holy Miter  : Magic Armlet: Dark Gear   : Rebirth Ring| | 03 |      -      : Holy Miter  : Magic Armlet: R. of Lords : Rebirth Ring| | 03 |      -      : Holy Miter  : N-Kai Armlet: R. of Lords : Rebirth Ring| | 46 |      -      : Holy Miter  : N-Kai Armlet: R. of Lords : Ribbon      |</p>
-<h3 class="subsection-header">EIKO</h3>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">STR (A/B/LV1)</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 67</span><span class="stat-badge mag">MAG 63</span><span class="stat-badge spd">SPD 23</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">30</td><td>—</td><td>Holy Miter</td><td>Power Wrist</td><td>Dark Gear</td><td>Black Belt</td></tr><tr><td class="lvl-badge">30</td><td>—</td><td>Holy Miter</td><td>Power Wrist</td><td>Dark Gear</td><td>Dark Matter</td></tr><tr><td class="lvl-badge">38</td><td>—</td><td>Holy Miter</td><td>Power Wrist</td><td>Dark Gear</td><td>Rebirth Ring</td></tr></tbody></table></div>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">MAG (A/B/LV1)</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 59</span><span class="stat-badge mag">MAG 73</span><span class="stat-badge spd">SPD 23</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">41</td><td>—</td><td>Holy Miter</td><td>Magic Armlet</td><td>Dark Gear</td><td>Ribbon</td></tr><tr><td class="lvl-badge">57</td><td>—</td><td>Holy Miter</td><td>N-Kai Armlet</td><td>Dark Gear</td><td>Ribbon</td></tr></tbody></table></div>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">BAL (A/B/LV1)</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 65</span><span class="stat-badge mag">MAG 67</span><span class="stat-badge spd">SPD 23</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">04</td><td>—</td><td>Holy Miter</td><td>N-Kai Armlet</td><td>Dark Gear</td><td>Rebirth Ring</td></tr><tr><td class="lvl-badge">94</td><td>—</td><td>Holy Miter</td><td>N-Kai Armlet</td><td>Dark Gear</td><td>Dark Matter</td></tr></tbody></table></div>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH C - STR</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 67</span><span class="stat-badge mag">MAG 62</span><span class="stat-badge spd">SPD 23</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">*H</td><td>—</td><td>Holy Miter</td><td>N-Kai Armlet</td><td>Light Robe</td><td>Black Belt</td></tr><tr><td class="lvl-badge">*P</td><td>—</td><td>Holy Miter</td><td>N-Kai Armlet</td><td>Light Robe</td><td>Rebirth Ring</td></tr><tr><td class="lvl-badge">02</td><td>—</td><td>Holy Miter</td><td>N-Kai Armlet</td><td>Dark Gear</td><td>Ribbon</td></tr><tr><td class="lvl-badge">73</td><td>—</td><td>Holy Miter</td><td>Power Wrist</td><td>Dark Gear</td><td>Black Belt</td></tr></tbody></table></div>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH C - BAL</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 65</span><span class="stat-badge mag">MAG 66</span><span class="stat-badge spd">SPD 24</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">*H</td><td>—</td><td>Holy Miter</td><td>N-Kai Armlet</td><td>R. of Lords</td><td>Black Belt</td></tr><tr><td class="lvl-badge">*P</td><td>—</td><td>Holy Miter</td><td>N-Kai Armlet</td><td>R. of Lords</td><td>Rebirth Ring</td></tr><tr><td class="lvl-badge">02</td><td>—</td><td>Bandana</td><td>Power Wrist</td><td>R. of Lords</td><td>Rebirth Ring</td></tr><tr><td class="lvl-badge">05</td><td>—</td><td>Holy Miter</td><td>Power Wrist</td><td>R. of Lords</td><td>Rebirth Ring</td></tr><tr><td class="lvl-badge">05</td><td>—</td><td>Holy Miter</td><td>Power Wrist</td><td>Dark Gear</td><td>Dark Matter</td></tr><tr><td class="lvl-badge">06</td><td>—</td><td>Holy Miter</td><td>Power Wrist</td><td>Dark Gear</td><td>Rebirth Ring</td></tr><tr><td class="lvl-badge">57</td><td>—</td><td>Holy Miter</td><td>N-Kai Armlet</td><td>Dark Gear</td><td>Dark Matter</td></tr></tbody></table></div>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH COMBINED</span><div class="stat-badges"><span class="stat-badge spr">SPR 47</span><span class="stat-badge str">STR 62</span><span class="stat-badge mag">MAG 73</span><span class="stat-badge spd">SPD 26</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">*X</td><td>—</td><td>Holy Miter</td><td>N-Kai Armlet</td><td>R. of Lords</td><td>Ribbon</td></tr><tr><td class="lvl-badge">02</td><td>—</td><td>Holy Miter</td><td>Magic Armlet</td><td>Dark Gear</td><td>Rebirth Ring</td></tr><tr><td class="lvl-badge">03</td><td>—</td><td>Holy Miter</td><td>Magic Armlet</td><td>R. of Lords</td><td>Rebirth Ring</td></tr><tr><td class="lvl-badge">03</td><td>—</td><td>Holy Miter</td><td>N-Kai Armlet</td><td>R. of Lords</td><td>Rebirth Ring</td></tr><tr><td class="lvl-badge">46</td><td>—</td><td>Holy Miter</td><td>N-Kai Armlet</td><td>R. of Lords</td><td>Ribbon</td></tr></tbody></table></div>
+<h3 class="char-section-header">EIKO</h3>
 <p class="mb-3">Eiko is clearly a mage-type character and will be focusing on her Magic stat. She doesn&#x27;t have as many damaging attacks as Garnet, but she still needs Magic for the MP and for the attacks she does have, namely Holy and Madeen.</p>
-<h3 class="subsection-header">PATH A/B/C/LV1</h3>
-<p class="mb-3">| 05 | Magic Racket: Holy Miter  : Magic Armlet: R. of Lords : Dark Matter | | 13 | Magic Racket: Holy Miter  : Magic Armlet: Minerva&#x27;s P.: Ribbon      | | 28 | Magic Racket: Holy Miter  : Magic Armlet: R. of Lords : Ribbon      | | 52 | Magic Racket: Holy Miter  : Magic Armlet: Minerva&#x27;s P.: Pearl Rouge |</p>
-<h3 class="subsection-header">PATH COMBINED</h3>
-<p class="mb-3">| 01 | Magic Racket: Holy Miter  : Power Wrist : Minerva&#x27;s P.: Ribbon      | | 09 | Magic Racket: Holy Miter  : Magic Armlet: Minerva&#x27;s P.: Ribbon      | | 12 | Magic Racket: Holy Miter  : Magic Armlet: R. of Lords : Dark Matter | | 24 | Magic Racket: Holy Miter  : Magic Armlet: Minerva&#x27;s P.: Dark Matter | | 52 | Magic Racket: Holy Miter  : Magic Armlet: R. of Lords : Pearl Rouge |</p>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH A/B/C/LV1</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 56</span><span class="stat-badge mag">MAG 87</span><span class="stat-badge spd">SPD 29</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">05</td><td>Magic Racket</td><td>Holy Miter</td><td>Magic Armlet</td><td>R. of Lords</td><td>Dark Matter</td></tr><tr><td class="lvl-badge">13</td><td>Magic Racket</td><td>Holy Miter</td><td>Magic Armlet</td><td>Minerva&#x27;s P.</td><td>Ribbon</td></tr><tr><td class="lvl-badge">28</td><td>Magic Racket</td><td>Holy Miter</td><td>Magic Armlet</td><td>R. of Lords</td><td>Ribbon</td></tr><tr><td class="lvl-badge">52</td><td>Magic Racket</td><td>Holy Miter</td><td>Magic Armlet</td><td>Minerva&#x27;s P.</td><td>Pearl Rouge</td></tr></tbody></table></div>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH COMBINED</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 58</span><span class="stat-badge mag">MAG 85</span><span class="stat-badge spd">SPD 30</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">01</td><td>Magic Racket</td><td>Holy Miter</td><td>Power Wrist</td><td>Minerva&#x27;s P.</td><td>Ribbon</td></tr><tr><td class="lvl-badge">09</td><td>Magic Racket</td><td>Holy Miter</td><td>Magic Armlet</td><td>Minerva&#x27;s P.</td><td>Ribbon</td></tr><tr><td class="lvl-badge">12</td><td>Magic Racket</td><td>Holy Miter</td><td>Magic Armlet</td><td>R. of Lords</td><td>Dark Matter</td></tr><tr><td class="lvl-badge">24</td><td>Magic Racket</td><td>Holy Miter</td><td>Magic Armlet</td><td>Minerva&#x27;s P.</td><td>Dark Matter</td></tr><tr><td class="lvl-badge">52</td><td>Magic Racket</td><td>Holy Miter</td><td>Magic Armlet</td><td>R. of Lords</td><td>Pearl Rouge</td></tr></tbody></table></div>
 <p class="mb-3">NOTE: These results assume that Marcus stayed at Lv 1 while he was in the party. If he gained any Lvs, especially with stat-raising equipment, then some of Eiko&#x27;s stats may be higher. If you leveled Marcus then it is in your interest to use another set-up, as this one may no longer be optimal. You can use letao&#x27;s calculator for this.</p>
-<h3 class="subsection-header">AMARANT</h3>
+<h3 class="char-section-header">AMARANT</h3>
 <p class="mb-3">Amarant is similar to Zidane, except that he has more Level Ups available at the end of the challenge. Just like Zidane, Amarant has absolutely no need for a Magic stat outside of MP; No Mercy is not a magical attack. His moves don&#x27;t require much MP, either. Strength will be the focus.</p>
-<h3 class="subsection-header">PATH A/B/C/LV1</h3>
-<p class="mb-3">| 07 |      -      : Mantra Band : Power Wrist : Dark Gear   : Dark Matter | | 21 |      -      : Mantra Band : N-Kai Armlet: Dark Gear   : Dark Matter | | 70 |      -      : Mantra Band : Power Wrist : Dark Gear   : Black Belt  |</p>
-<h3 class="subsection-header">PATH COMBINED</h3>
-<p class="mb-3">| 06 |      -      : Mantra Band : Power Wrist : Dark Gear   : Rebirth Ring| | 13 |      -      : Mantra Band : Power Wrist : Dark Gear   : Dark Matter | | 79 |      -      : Mantra Band : N-Kai Armlet: Dark Gear   : Dark Matter |</p></div></div><div class="segment-box" id="section-I00"><button class="foldable-header collapsed"><div class="segment-title-container"><span class="segment-title">TREASURE LOCATIONS <span class="segment-code">(I00)</span></span></div><svg class="arrow-icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg></button><div class="foldable-content collapsed"><p class="mb-3">The following is a list of the locations of all the treasures in FFIX, in case you can&#x27;t find some of them. They are listed by the area in which they appear and then in categorical order; medicinal items are listed first, followed by equipment, gems, cards, key items and finally Gil. The areas are listed in the order in which you first visit them.</p>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH A/B/C/LV1</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 72</span><span class="stat-badge mag">MAG 56</span><span class="stat-badge spd">SPD 31</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">07</td><td>—</td><td>Mantra Band</td><td>Power Wrist</td><td>Dark Gear</td><td>Dark Matter</td></tr><tr><td class="lvl-badge">21</td><td>—</td><td>Mantra Band</td><td>N-Kai Armlet</td><td>Dark Gear</td><td>Dark Matter</td></tr><tr><td class="lvl-badge">70</td><td>—</td><td>Mantra Band</td><td>Power Wrist</td><td>Dark Gear</td><td>Black Belt</td></tr></tbody></table></div>
+<div class="stat-path-card"><div class="stat-path-header"><span class="stat-path-name">PATH COMBINED</span><div class="stat-badges"><span class="stat-badge spr">SPR 50</span><span class="stat-badge str">STR 70</span><span class="stat-badge mag">MAG 60</span><span class="stat-badge spd">SPD 31</span></div></div><table class="stat-equip-table"><thead><tr><th>Lvl</th><th>Weapon</th><th>Head</th><th>Arm</th><th>Armor</th><th>Add-On</th></tr></thead><tbody><tr><td class="lvl-badge">06</td><td>—</td><td>Mantra Band</td><td>Power Wrist</td><td>Dark Gear</td><td>Rebirth Ring</td></tr><tr><td class="lvl-badge">13</td><td>—</td><td>Mantra Band</td><td>Power Wrist</td><td>Dark Gear</td><td>Dark Matter</td></tr><tr><td class="lvl-badge">79</td><td>—</td><td>Mantra Band</td><td>N-Kai Armlet</td><td>Dark Gear</td><td>Dark Matter</td></tr></tbody></table></div></div></div><div class="segment-box" id="section-I00"><button class="foldable-header collapsed"><div class="segment-title-container"><span class="segment-title">TREASURE LOCATIONS <span class="segment-code">(I00)</span></span></div><svg class="arrow-icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg></button><div class="foldable-content collapsed"><p class="mb-3">The following is a list of the locations of all the treasures in FFIX, in case you can&#x27;t find some of them. They are listed by the area in which they appear and then in categorical order; medicinal items are listed first, followed by equipment, gems, cards, key items and finally Gil. The areas are listed in the order in which you first visit them.</p>
 <p class="mb-3">An [F] indicates that this is a field icon treasure, a [C] means the item is found in a chest and an [R] means it is received as a reward or by other means. An [*] indicates that this treasure CAN be picked up on Disc 4 after obtaining the Excalibur II. Some location names are taken directly from the LOCATION bar on the bottom of the menu screen, so check it when looking for a treasure.</p>
-<h3 class="subsection-header">ALEXANDRIA</h3>
+<h3 class="char-section-header">ALEXANDRIA</h3>
 <h4 class="text-lg font-semibold text-gray-300 mt-4 mb-2">DISC 1: TOWN</h4>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Potion          <span class="text-blue-400 font-bold">[F]</span> to the left of the spot where you first control Vivi</li>
@@ -2320,7 +2310,7 @@
 <li>10 Gil          <span class="text-blue-400 font-bold">[R]</span> gotten for skipping 20 consecutive times</li>
 </ul>
 <p class="mb-3">NOTE: The prizes received for jumping rope can also be gotten on Disc 1.</p>
-<h3 class="subsection-header">PRIMA VISTA</h3>
+<h3 class="char-section-header">PRIMA VISTA</h3>
 <h4 class="text-lg font-semibold text-gray-300 mt-4 mb-2">START OF GAME</h4>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Potion          <span class="text-blue-400 font-bold">[F]</span> on the upper right side of the Prima Vista Cargo Room</li>
@@ -2341,7 +2331,7 @@
 <li>Bronze Gloves   <span class="text-blue-400 font-bold">[C]</span> on the Prima Vista Bridge; on the far right</li>
 <li>116 Gil         <span class="text-blue-400 font-bold">[F]</span> in Vivi&#x27;s room, on top of the bunkbed</li>
 </ul>
-<h3 class="subsection-header">ICE CAVERN</h3>
+<h3 class="char-section-header">ICE CAVERN</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Potion          <span class="text-blue-400 font-bold">[C]</span> in the second screen; at the end of the bottom path</li>
 <li>Potion          <span class="text-blue-400 font-bold">[C]</span> in the Icicle Field; on the ice column</li>
@@ -2352,7 +2342,7 @@
 <li>Mage Masher     <span class="text-blue-400 font-bold">[C]</span> in the Icicle Field; on the bottom right of the screen</li>
 <li>Leather Wrist   <span class="text-blue-400 font-bold">[C]</span> in the fourth screen; on a path behind an ice wall</li>
 </ul>
-<h3 class="subsection-header">DALI</h3>
+<h3 class="char-section-header">DALI</h3>
 <h4 class="text-lg font-semibold text-gray-300 mt-4 mb-2">DISC 1/2/3/4: TOWN</h4>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Potion          <span class="text-blue-400 font-bold">[C]</span> in the Dali inn; in the far left of the room</li>
@@ -2387,12 +2377,12 @@
 <li>95 Gil          <span class="text-blue-400 font-bold">[C]</span> in the Production Area; to the right of the door</li>
 <li>156 Gil         <span class="text-blue-400 font-bold">[C]</span> in the Entrance; bottom of the screen</li>
 </ul>
-<h3 class="subsection-header">OBSERVATORY MOUNTAIN</h3>
+<h3 class="char-section-header">OBSERVATORY MOUNTAIN</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Hi-Potion       <span class="text-blue-400 font-bold">[C]</span> at the base of the mountain; on the bottom</li>
 <li>135 Gil         <span class="text-blue-400 font-bold">[F]</span> at the base of the mountain; in the back</li>
 </ul>
-<h3 class="subsection-header">LINDBLUM</h3>
+<h3 class="char-section-header">LINDBLUM</h3>
 <h4 class="text-lg font-semibold text-gray-300 mt-4 mb-2">DISC 1</h4>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Hi-Potion       <span class="text-blue-400 font-bold">[C]</span> in Card Freak Gon&#x27;s House</li>
@@ -2449,7 +2439,7 @@
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Protect Ring    <span class="text-blue-400 font-bold">[C]</span> in the Tantalus Playhouse after the Nero Fam. sidequest</li>
 </ul>
-<h3 class="subsection-header">QU&#x27;S MARSH</h3>
+<h3 class="char-section-header">QU&#x27;S MARSH</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Ether           <span class="text-blue-400 font-bold">[R]</span> given to you by Quale for catching 5 frogs</li>
 <li>Elixir          <span class="text-blue-400 font-bold">[R]</span> given to you by Quale for catching 15 frogs</li>
@@ -2460,7 +2450,7 @@
 <li>Battle Boots    <span class="text-blue-400 font-bold">[R]</span> given to you by Quale for catching 45 frogs</li>
 <li>Ore             <span class="text-blue-400 font-bold">[R]</span> given to you by Quale for catching 2 frogs</li>
 </ul>
-<h3 class="subsection-header">SOUTH GATE</h3>
+<h3 class="char-section-header">SOUTH GATE</h3>
 <h4 class="text-lg font-semibold text-gray-300 mt-4 mb-2">BOHDEN ARCH</h4>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Ether           <span class="text-blue-400 font-bold">[F]</span> on the ground to the right in the back</li>
@@ -2482,7 +2472,7 @@
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>1,610 Gil       <span class="text-blue-400 font-bold">[C]</span> on the ledge near the Bridge</li>
 </ul>
-<h3 class="subsection-header">GIZAMALUKE&#x27;S GROTTO</h3>
+<h3 class="char-section-header">GIZAMALUKE&#x27;S GROTTO</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Magus Hat       <span class="text-blue-400 font-bold">[F]</span> on the path around the bell chamber</li>
 <li>Mythril Gloves  <span class="text-blue-400 font-bold">[F]</span> on the path around the bell chamber</li>
@@ -2490,7 +2480,7 @@
 <li>Extension       <span class="text-blue-400 font-bold">[R]</span> give Moguta a Kupo Nut on Disc 3</li>
 <li>Aloha T-Shirt   <span class="text-blue-400 font-bold">[R]</span> give Moguta a Kupo Nut on Disc 4</li>
 </ul>
-<h3 class="subsection-header">NORTH GATE</h3>
+<h3 class="char-section-header">NORTH GATE</h3>
 <h4 class="text-lg font-semibold text-gray-300 mt-4 mb-2">MELDA ARCH</h4>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Potion          <span class="text-blue-400 font-bold">[C]</span> behind the fence to the right</li>
@@ -2501,7 +2491,7 @@
 <li>Hi-Potion       <span class="text-blue-400 font-bold">[C]</span> in the back near the gate</li>
 <li>Tent            <span class="text-blue-400 font-bold">[C]</span> in the back near the gate</li>
 </ul>
-<h3 class="subsection-header">BURMECIA</h3>
+<h3 class="char-section-header">BURMECIA</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Potion          <span class="text-blue-400 font-bold">[C]</span> to the left of the entrance inside the left Residence</li>
 <li>Ether           <span class="text-blue-400 font-bold">[C]</span> behind the fireplace in the room with the bed</li>
@@ -2515,11 +2505,11 @@
 <li>Cancer          <span class="text-blue-400 font-bold">[F]</span> behind the overturned cart in the Suburb</li>
 </ul>
 <p class="mb-3">NOTE: There are some fake chests in Burmecia. Getting near one throws you into a battle with a Mimic enemy and the chest will disappear. It&#x27;s up to you whether you want to keep these &quot;chests&quot; or not. Personally, I would choose to leave them.</p>
-<h3 class="subsection-header">SUMMIT STATION</h3>
+<h3 class="char-section-header">SUMMIT STATION</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Phoenix Down    <span class="text-blue-400 font-bold">[C]</span> to the left of the reception desk</li>
 </ul>
-<h3 class="subsection-header">QUAN&#x27;S DWELLING</h3>
+<h3 class="char-section-header">QUAN&#x27;S DWELLING</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Ether           <span class="text-blue-400 font-bold">[C]</span> on the ledge overlooking the hot springs</li>
 <li>Ether           <span class="text-blue-400 font-bold">[F]</span> climb the ladder in the living room</li>
@@ -2528,7 +2518,7 @@
 <li>Scorpio         <span class="text-blue-400 font-bold">[F]</span> on the shore of the hot springs; near the chest</li>
 <li>Opiuchius       <span class="text-blue-400 font-bold">[F]</span> where Scorpio was, after submitting the other 12 coins</li>
 </ul>
-<h3 class="subsection-header">TRENO</h3>
+<h3 class="char-section-header">TRENO</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Ether           <span class="text-blue-400 font-bold">[F]</span> to the left of Queen Stella&#x27;s palace; near the trees</li>
 <li>Elixir          <span class="text-blue-400 font-bold">[R]</span> given to you by Queen Stella for submitting 6 coins</li>
@@ -2564,12 +2554,12 @@
 <li>20,000 Gil      <span class="text-blue-400 font-bold">[R]</span> given to you by Queen Stella for submitting 9 coins</li>
 <li>30,000 Gil      <span class="text-blue-400 font-bold">[R]</span> given to you by Queen Stella for submitting 11 coins</li>
 </ul>
-<h3 class="subsection-header">GARGAN ROO</h3>
+<h3 class="char-section-header">GARGAN ROO</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Phoenix Down    <span class="text-blue-400 font-bold">[C]</span> to the left of the lever on the left platform</li>
 <li>Chain Plate     <span class="text-blue-400 font-bold">[C]</span> to the right of the entrance of the left platform</li>
 </ul>
-<h3 class="subsection-header">CLEYRA&#x27;S TRUNK</h3>
+<h3 class="char-section-header">CLEYRA&#x27;S TRUNK</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Potion          <span class="text-blue-400 font-bold">[C]</span> at the fork near the top</li>
 <li>Hi-Potion       <span class="text-blue-400 font-bold">[C]</span> in the chamber with the 2 sinkholes</li>
@@ -2590,7 +2580,7 @@
 <li>Magician Shoes  <span class="text-blue-400 font-bold">[C]</span> on the branch above the flooding chamber</li>
 <li>900 Gil         <span class="text-blue-400 font-bold">[C]</span> in the chamber with the 2 sinkholes</li>
 </ul>
-<h3 class="subsection-header">CLEYRA SETTLEMENT</h3>
+<h3 class="char-section-header">CLEYRA SETTLEMENT</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Ether           <span class="text-blue-400 font-bold">[F]</span> in the inn; on a nightstand on the upper floor</li>
 <li>Ether           <span class="text-blue-400 font-bold">[F]</span> on the balcony of the Cathedral</li>
@@ -2616,7 +2606,7 @@
 <li>970 Gil         <span class="text-blue-400 font-bold">[F]</span> Antlion&#x27;s sinkhole; near the bottom of the screen</li>
 <li>1,250 Gil       <span class="text-blue-400 font-bold">[F]</span> in the inn; to the right of the register by the desk</li>
 </ul>
-<h3 class="subsection-header">PINNACLE ROCKS</h3>
+<h3 class="char-section-header">PINNACLE ROCKS</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Elixir          <span class="text-blue-400 font-bold">[C]</span> at the end of the path entering from the World Map</li>
 <li>Phoenix Down    <span class="text-blue-400 font-bold">[C]</span> at the end of the path entering from the World Map</li>
@@ -2625,7 +2615,7 @@
 <li>Mythril Vest    <span class="text-blue-400 font-bold">[C]</span> below the Monty the moogle</li>
 <li>Peridot         <span class="text-blue-400 font-bold">[R]</span> given to you by Ramuh for assembling the Hero&#x27;s Tale</li>
 </ul>
-<h3 class="subsection-header">FOSSIL ROO</h3>
+<h3 class="char-section-header">FOSSIL ROO</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Ether           <span class="text-blue-400 font-bold">[C]</span> above the path to Switch #2</li>
 <li>Elixir          <span class="text-blue-400 font-bold">[F]</span> in Armodullahan&#x27;s cage</li>
@@ -2633,7 +2623,7 @@
 <li>Survival Vest   <span class="text-blue-400 font-bold">[F]</span> in the far left of the Storage Area</li>
 <li>Fairy Earrings  <span class="text-blue-400 font-bold">[C]</span> take the path controlled by Switch #2</li>
 </ul>
-<h3 class="subsection-header">CONDE PETIE</h3>
+<h3 class="char-section-header">CONDE PETIE</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Phoenix Pinion  <span class="text-blue-400 font-bold">[F]</span> on the stairs leading to the grocery shop</li>
 <li>Diamond         <span class="text-blue-400 font-bold">[F]</span> on the Kirkboat</li>
@@ -2641,7 +2631,7 @@
 <li>1,800 Gil       <span class="text-blue-400 font-bold">[F]</span> behind one of the beds at the inn</li>
 <li>2,700 Gil       <span class="text-blue-400 font-bold">[F]</span> to the left of the entrance to the settlement</li>
 </ul>
-<h3 class="subsection-header">BLACK MAGE VILLAGE</h3>
+<h3 class="char-section-header">BLACK MAGE VILLAGE</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Ether           <span class="text-blue-400 font-bold">[F]</span> to the left of the counter of the item shop</li>
 <li>Elixir          <span class="text-blue-400 font-bold">[F]</span> to the right of the entrance to the weapon shop</li>
@@ -2651,7 +2641,7 @@
 <li>843 Gil         <span class="text-blue-400 font-bold">[C]</span> on the rooftops of the synthesis shop</li>
 <li>2,000 Gil       <span class="text-blue-400 font-bold">[C]</span> behind the synthesis shop counter</li>
 </ul>
-<h3 class="subsection-header">CONDE PETIE MOUNTAIN PATH</h3>
+<h3 class="char-section-header">CONDE PETIE MOUNTAIN PATH</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Ether           <span class="text-blue-400 font-bold">[C]</span> to the left of the statue with the Green Stone</li>
 <li>Remedy          <span class="text-blue-400 font-bold">[C]</span> on the upper ledge in the first area</li>
@@ -2662,7 +2652,7 @@
 <li>Yellow Stone    <span class="text-blue-400 font-bold">[F]</span> in the statue at the fork after the Hilgigars battle</li>
 <li>Green Stone     <span class="text-blue-400 font-bold">[F]</span> in the statue on the lower path to Madain Sari</li>
 </ul>
-<h3 class="subsection-header">MADAIN SARI</h3>
+<h3 class="char-section-header">MADAIN SARI</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Elixir          <span class="text-blue-400 font-bold">[C]</span> given to you by the moogles</li>
 <li>Phoenix Down    <span class="text-blue-400 font-bold">[C]</span> in the room below Eiko&#x27;s back porch</li>
@@ -2674,7 +2664,7 @@
 <li>Kirman Coffee   <span class="text-blue-400 font-bold">[F]</span> on Eiko&#x27;s back porch, to the left behind the counter</li>
 <li>Libra           <span class="text-blue-400 font-bold">[F]</span> behind the fountain</li>
 </ul>
-<h3 class="subsection-header">IIFA TREE</h3>
+<h3 class="char-section-header">IIFA TREE</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Hi-Potion       <span class="text-blue-400 font-bold">[C]</span> on the bottom of the second screen</li>
 <li>Ether           <span class="text-blue-400 font-bold">[C]</span> in a niche on the right of the third screen</li>
@@ -2687,7 +2677,7 @@
 <li>Aquamarine      <span class="text-blue-400 font-bold">[R]</span> Garnet takes this from the Eidolon statue</li>
 <li>Ruby            <span class="text-blue-400 font-bold">[R]</span> received after breaking the seal on the Iifa Tree</li>
 </ul>
-<h3 class="subsection-header">OEILVERT</h3>
+<h3 class="char-section-header">OEILVERT</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Elixir          <span class="text-blue-400 font-bold">[C]</span> on the upper level of the Planetarium</li>
 <li>Remedy          <span class="text-blue-400 font-bold">[C]</span> below the overlook on the yellow window in the Hall</li>
@@ -2698,7 +2688,7 @@
 <li>Shield Armor    <span class="text-blue-400 font-bold">[C]</span> behind the hologram in the Planetarium</li>
 <li>Feather Boots   <span class="text-blue-400 font-bold">[C]</span> on the upper right side of the Ship Display</li>
 </ul>
-<h3 class="subsection-header">DESERT PALACE</h3>
+<h3 class="char-section-header">DESERT PALACE</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Black Hood      <span class="text-blue-400 font-bold">[F]</span> from the right bloodstone in the Shadow Chamber</li>
 <li>N-Kai Armlet    <span class="text-blue-400 font-bold">[F]</span> from the bloodstone in the Stairwell</li>
@@ -2709,11 +2699,11 @@
 <li>Fairy Earrings  <span class="text-blue-400 font-bold">[C]</span> below the blue path in the Light Chamber</li>
 <li>Namingway Card  <span class="text-blue-400 font-bold">[F]</span> in Kuja&#x27;s room; to the left of the entrance</li>
 </ul>
-<h3 class="subsection-header">ESTO GAZA</h3>
+<h3 class="char-section-header">ESTO GAZA</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Wing Edge       <span class="text-blue-400 font-bold">[F]</span> around the counter in the Shop</li>
 </ul>
-<h3 class="subsection-header">MOUNT GULUG</h3>
+<h3 class="char-section-header">MOUNT GULUG</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Ether           <span class="text-blue-400 font-bold">[F]</span> in the house to the left of the entrance; upper level</li>
 <li>Elixir          <span class="text-blue-400 font-bold">[C]</span> in the back of the room with the single Red Dragon</li>
@@ -2725,12 +2715,12 @@
 <li>Ribbon          <span class="text-blue-400 font-bold">[R]</span> given to you by Mog</li>
 <li>9,693 Gil       <span class="text-blue-400 font-bold">[F]</span> in the house to the left of the entrance, lower level</li>
 </ul>
-<h3 class="subsection-header">HILDA GARDE 3</h3>
+<h3 class="char-section-header">HILDA GARDE 3</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Elixir          <span class="text-blue-400 font-bold">[F]</span> in the hatch at the top of the ladder</li>
 <li>Tent            <span class="text-blue-400 font-bold">[F]</span> in a hatch on the wall</li>
 </ul>
-<h3 class="subsection-header">DAGUERREO</h3>
+<h3 class="char-section-header">DAGUERREO</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Elixir          <span class="text-blue-400 font-bold">[F]</span> on the right end of the middle floor</li>
 <li>Elixir          <span class="text-blue-400 font-bold">[F]</span> on the left end of the middle floor</li>
@@ -2741,7 +2731,7 @@
 <li>Rank S Medal    <span class="text-blue-400 font-bold">[R]</span> awarded by the Four-Armed Man for reaching Rank S</li>
 </ul>
 <p class="mb-3">NOTE: You can get only 1 of the 2 cards.</p>
-<h3 class="subsection-header">IPSEN&#x27;S CASTLE</h3>
+<h3 class="char-section-header">IPSEN&#x27;S CASTLE</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Dagger          <span class="text-blue-400 font-bold">[C]</span> to the left of the entrance</li>
 <li>Broadsword      <span class="text-blue-400 font-bold">[C]</span> on the middle walkway in the Stairwell</li>
@@ -2757,7 +2747,7 @@
 <li>Ancient Aroma   <span class="text-blue-400 font-bold">[R]</span> solve the vase puzzle and pick up the right vase</li>
 <li>Aquarius        <span class="text-blue-400 font-bold">[C]</span> to the right of the entrance</li>
 </ul>
-<h3 class="subsection-header">TERRA</h3>
+<h3 class="char-section-header">TERRA</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Elixir          <span class="text-blue-400 font-bold">[C]</span> on the left ledge in Path by the Pond</li>
 <li>Remedy          <span class="text-blue-400 font-bold">[C]</span> on the rightmost ledge in the Treetop</li>
@@ -2767,7 +2757,7 @@
 <li>Demon&#x27;s Vest    <span class="text-blue-400 font-bold">[C]</span> at the Tree Base</li>
 <li>Minerva&#x27;s Plate <span class="text-blue-400 font-bold">[C]</span> below the steps leading to Bran Bal</li>
 </ul>
-<h3 class="subsection-header">BRAN BAL</h3>
+<h3 class="char-section-header">BRAN BAL</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Elixir          <span class="text-blue-400 font-bold">[C]</span> in the room where the party takes Garnet</li>
 <li>Elixir          <span class="text-blue-400 font-bold">[F]</span> near the bottom of the Laboratory</li>
@@ -2775,7 +2765,7 @@
 <li>Flash Hat       <span class="text-blue-400 font-bold">[C]</span> on an island below the Gate area</li>
 <li>Angel Earrings  <span class="text-blue-400 font-bold">[F]</span> near the water in the left area of Bran Bal</li>
 </ul>
-<h3 class="subsection-header">PANDEMONIUM</h3>
+<h3 class="char-section-header">PANDEMONIUM</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Elixir          <span class="text-blue-400 font-bold">[C]</span> in the Maze, in the center</li>
 <li>Holy Miter      <span class="text-blue-400 font-bold">[F]</span> on the throne which Zidane was sitting on</li>
@@ -2783,24 +2773,24 @@
 <li>Battle Boots    <span class="text-blue-400 font-bold">[C]</span> in the Maze, in the top right area</li>
 <li>20,007 Gil      <span class="text-blue-400 font-bold">[C]</span> select height 3 and take the lift to the top</li>
 </ul>
-<h3 class="subsection-header">INVINCIBLE</h3>
+<h3 class="char-section-header">INVINCIBLE</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Pisces          <span class="text-blue-400 font-bold">[C]</span> near the entrance to the bridge</li>
 </ul>
-<h3 class="subsection-header">MOGNET CENTRAL</h3>
+<h3 class="char-section-header">MOGNET CENTRAL</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Protect Ring    <span class="text-blue-400 font-bold">[R]</span> given to you by Artemicion for restoring Mognet</li>
 </ul>
-<h3 class="subsection-header">CHOCOBO&#x27;S PARADISE</h3>
+<h3 class="char-section-header">CHOCOBO&#x27;S PARADISE</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Fat Chocobo C.  <span class="text-blue-400 font-bold">[R]</span> from Fat Chocobo for digging up all Chocographs</li>
 </ul>
-<h3 class="subsection-header">CHOCOBO&#x27;S AIR GARDEN</h3>
+<h3 class="char-section-header">CHOCOBO&#x27;S AIR GARDEN</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>Ozma Card       <span class="text-blue-400 font-bold">[R]</span> awarded for defeating Ozma</li>
 <li>Strategy Guide  <span class="text-blue-400 font-bold">[R]</span> awarded for defeating Ozma</li>
 </ul>
-<h3 class="subsection-header">MEMORIA</h3>
+<h3 class="char-section-header">MEMORIA</h3>
 <ul class="list-disc list-inside my-2 space-y-1 text-sm">
 <li>The Tower       <span class="text-blue-400 font-bold">[F]</span> on the &quot;balcony&quot; in Memoria Recollection</li>
 <li>Kain&#x27;s Lance    <span class="text-blue-400 font-bold">[F]</span> in a niche in the right wall of Memoria Entrance</li>
@@ -2985,25 +2975,25 @@
 <li class="text-sm">Thanks to my mom for everything.</li>
 <li class="text-sm">Thanks to my cat, Kichow, for keeping me company while I wrote this, and for always being curious as to what I was writing. &lt;3</li>
 <li class="text-sm">Thanks to Squaresoft for creating Final Fantasy IX!</li>
-</ul></div></div><div class="segment-box" id="section-L00"><button class="foldable-header collapsed"><div class="segment-title-container"><span class="segment-title">VERSION HISTORY <span class="segment-code">(L00)</span></span></div><svg class="arrow-icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg></button><div class="foldable-content collapsed"><h3 class="subsection-header">VERSION 1</h3>
+</ul></div></div><div class="segment-box" id="section-L00"><button class="foldable-header collapsed"><div class="segment-title-container"><span class="segment-title">VERSION HISTORY <span class="segment-code">(L00)</span></span></div><svg class="arrow-icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg></button><div class="foldable-content collapsed"><h3 class="char-section-header">VERSION 1</h3>
 <p class="mb-3">* Initial release</p>
-<h3 class="subsection-header">VERSION 2</h3>
+<h3 class="char-section-header">VERSION 2</h3>
 <p class="mb-3">* Completed Section I: Max Stats * Corrected some spelling and formatting errors</p>
-<h3 class="subsection-header">VERSION 3</h3>
+<h3 class="char-section-header">VERSION 3</h3>
 <p class="mb-3">* Added ASCII art * Added Notice to PAL Gamers * Added Section C: The Problem of Max Stats * Added Section M: Version History * Added Section N: Copyright * Added some questions to Section K: Frequently Asked Questions * Rewrote Section A: Introduction * Rewrote sub-section &quot;Complete a &quot;Bootleg&quot; Lv 1 Game&quot; under Section B: Main Goals of this Challenge * Introduced the Quick Find feature for all the circuits of the walkthrough * Introduced a completely new set of target times * Proof-read and proof-played the entire walkthrough; found and corrected a few contradictions and errors which appeared as a result of it being based on 2 separate runs * Incorporated some reader contributions into the guide * Edited the equipment to be used for AP gains and made it clear when specific abilities should be mastered * Lowered Zidane&#x27;s ending Lv from 40 to 32 by introducing a way to avoid the EXP distributed in Mount Gulug * Corrected many of the projected values, as well as the set-ups for Steiner and Eiko, in Section I: Max Stats * Introduced better max stat set-ups for Freya and Quina in Section I: Max Stats * Improved some boss strategies * Improved the formatting of the guide</p>
-<h3 class="subsection-header">VERSION 4</h3>
+<h3 class="char-section-header">VERSION 4</h3>
 <p class="mb-3">* Incorporated a Lv 1 Game into the challenge * Introduced a completely new set of target times * Rewrote or deleted all passages dealing with the &quot;bootleg&quot; Lv 1 Game * Corrected some mistakes concerning the bought quantities of some of the missable items * Incorporated some reader contributions into the guide * Redesigned the Table of Contents * Redesigned the Disc Number headers * Clarified how to use the Max Stats section and replaced most of the old set-ups with better ones submitted by contributors * Extended my commentaries in the Max Stats section * Rewrote the Frequently Asked Questions section * Introduced a way for slim-line PS2 and PS3 users to play this challenge even if they can&#x27;t skip FMVs</p>
-<h3 class="subsection-header">VERSION 5</h3>
+<h3 class="char-section-header">VERSION 5</h3>
 <p class="mb-3">* Rewrote The Problem of Max Stats section and included various stat paths for players to choose from * Added the Choosing a Stat Path section * Rewrote the Max Stats section and changed its name to Perfect Stats * Expanded the Treasure Locations section * Rewrote the Frequently Asked Questions section * Arranged the credits in alphabetical order</p>
-<h3 class="subsection-header">VERSION 6</h3>
+<h3 class="char-section-header">VERSION 6</h3>
 <p class="mb-3">* Added the Video Assistance section, which links to 1whoistornapart&#x27;s playlist of videos, the official supplement to this guide * Introduced a way for slim-line PS2 and PS3 users to skip FMVs * Introduced better stat set-ups for Zidane, Vivi and Quina * Incorporated some reader submissions into the guide</p>
-<h3 class="subsection-header">VERSION 7</h3>
+<h3 class="char-section-header">VERSION 7</h3>
 <p class="mb-3">* Introduced the Quick Find feature for all sections of the guide * Created an ASCII plaque for the guide info * Redesigned the Table of Contents * Redesigned the section headers * Added InvncblGrlnd&#x27;s playlist of videos to the Video Assistance section * Edited the introductory sections * Renamed the Before Beginning section to The Golden Rules * Removed the Making Money section from the guide * Modified how the BASE Stats game is played * Reformatted the guide</p>
-<h3 class="subsection-header">VERSION 8</h3>
+<h3 class="char-section-header">VERSION 8</h3>
 <p class="mb-3">* Added the PAUSE trick to the Golden Rules section * Added Louis1980&#x27;s playlist of videos to the Video Assistance section * Edited all passages dealing with Path C, which has been improved * Introduced better stat set-ups for Zidane, Quina and Amarant, and simplified set-ups for some of the other characters * Reformatted the item checklists and equipment set-ups</p>
-<h3 class="subsection-header">VERSION 9</h3>
+<h3 class="char-section-header">VERSION 9</h3>
 <p class="mb-3">* Rewrote the Introduction * Redesigned the formatting * Redesigned the Unique Items section * Rewrote the Choosing a Stat Path Section * Redesigned the timetable * Tested the entire walkthrough * Introduced new target times and target Gil entries * Edited the walkthrough to be compatible with the new stat paths * Added additional information about the Festival of the Hunt * Redesigned the Perfect Stats section * Introduced better stat set-ups for Zidane, Freya, Quina, Eiko and Amarant * Added a PAL timer code</p>
-<h3 class="subsection-header">VERSION X</h3>
+<h3 class="char-section-header">VERSION X</h3>
 <p class="mb-3">* WAY too much to list.</p></div></div><div class="segment-box" id="section-M00"><button class="foldable-header collapsed"><div class="segment-title-container"><span class="segment-title">COPYRIGHT <span class="segment-code">(M00)</span></span></div><svg class="arrow-icon w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg></button><div class="foldable-content collapsed"><p class="mb-3">This document is Copyright © 2005-2015 Atomos199 and is the intellectual property of the aforementioned author. It may be not be reproduced under any circumstances except for personal, private use. It may not be placed on any web site or otherwise distributed publicly without advance written permission. Use of this guide on any other website or as a part of any public display is strictly prohibited, and a violation of copyright.</p>
 <p class="mb-3">All trademarks and copyrights contained in this document are owned by their respective trademark and copyright holders.</p>
 <p class="mb-3">The Final Fantasy IX &quot;Excalibur II + Perfect Game Guide&quot; Copyright 2005-2015 © Atomos199</p>
