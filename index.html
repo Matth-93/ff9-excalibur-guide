@@ -3054,6 +3054,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (e.target.tagName === 'INPUT') return;
             header.classList.toggle('collapsed');
             header.nextElementSibling.classList.toggle('collapsed');
+            saveFolded();
         });
     });
 
@@ -3164,6 +3165,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 box.querySelectorAll('.checklist-item input[type="checkbox"]').forEach((cb, idx) => {
                     if (data[id + '_t' + idx]) cb.checked = true;
                 });
+                // Restore expanded state
+                if (data[id + '_open']) {
+                    const h = box.querySelector('.foldable-header');
+                    const c = box.querySelector('.foldable-content');
+                    if (h && c) {
+                        h.classList.remove('collapsed');
+                        c.classList.remove('collapsed');
+                    }
+                }
             });
             // Auction checklist
             document.querySelectorAll('.auction-checklist input[data-auction-item]').forEach(cb => {
@@ -3183,6 +3193,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 box.querySelectorAll('.checklist-item input[type="checkbox"]').forEach((cb, idx) => {
                     if (cb.checked) data[id + '_t' + idx] = true;
                 });
+                // Persist expanded state
+                const h = box.querySelector('.foldable-header');
+                if (h && !h.classList.contains('collapsed')) data[id + '_open'] = true;
             });
             // Auction checklist
             document.querySelectorAll('.auction-checklist input[data-auction-item]').forEach(cb => {
@@ -3191,6 +3204,8 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
         } catch(e) {}
     }
+
+    function saveFolded() { saveChecked(); }
 
     loadChecked();
 
@@ -3227,6 +3242,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     h.nextElementSibling.classList.remove('collapsed');
                 }
             });
+            saveFolded();
         });
     });
 });
