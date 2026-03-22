@@ -74,8 +74,11 @@
         .foldable-header.collapsed .arrow-icon { transform: rotate(-90deg); }
 
         /* --- IN-SECTION FOCUS DIMMING --- */
-        .foldable-content > *, .foldable-content .instruction-list > li { transition: opacity 0.18s, filter 0.18s; }
+        .foldable-content > *,
+        .foldable-content > .mt-4 > *,
+        .foldable-content .instruction-list > li { transition: opacity 0.18s, filter 0.18s; }
         .foldable-content:has(> *:hover) > *:not(:hover) { opacity: 0.22; filter: brightness(0.45); }
+        .foldable-content > .mt-4:has(> *:hover) > *:not(:hover) { opacity: 0.22; filter: brightness(0.45); }
         .foldable-content .instruction-list:has(> li:hover) > li:not(:hover) { opacity: 0.22; filter: brightness(0.45); }
         .foldable-content .instruction-list > li:hover { background: rgba(200,168,75,0.06); border-radius: 0.3rem; padding-left: 0.3rem; margin-left: -0.3rem; }
 
