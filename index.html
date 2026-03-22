@@ -73,6 +73,12 @@
         .foldable-header:hover .arrow-icon { opacity: 0.8; }
         .foldable-header.collapsed .arrow-icon { transform: rotate(-90deg); }
 
+        /* --- IN-SECTION FOCUS DIMMING --- */
+        .foldable-content > *, .foldable-content .instruction-list > li { transition: opacity 0.18s, filter 0.18s; }
+        .foldable-content:has(> *:hover) > *:not(:hover) { opacity: 0.22; filter: brightness(0.45); }
+        .foldable-content .instruction-list:has(> li:hover) > li:not(:hover) { opacity: 0.22; filter: brightness(0.45); }
+        .foldable-content .instruction-list > li:hover { background: rgba(200,168,75,0.06); border-radius: 0.3rem; padding-left: 0.3rem; margin-left: -0.3rem; }
+
         /* --- TREASURE CHECKLIST --- */
         .treasure-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.4rem; background-color: var(--bg-tertiary); padding: 1rem; border-radius: 0.5rem; margin: 1.5rem 0; border: 1px solid var(--border-color); }
         .checklist-item { display: flex; align-items: flex-start; padding: 0.2rem 0.4rem; border-radius: 0.25rem; transition: background 0.15s; }
@@ -3236,6 +3242,7 @@ document.addEventListener('DOMContentLoaded', function () {
             saveFolded();
         });
     });
+
 });
 </script>
 </body>
